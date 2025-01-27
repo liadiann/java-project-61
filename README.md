@@ -6,4 +6,7 @@
 Пример запуска игры: [asciinema](https://asciinema.org/a/H9yEHEFVqQSueGoNw868pcw6b)
 
 ### Calc
-Пример запуска игры: [acciinema](https://asciinema.org/a/X5r1KQThf1rMzYH7gJIF1Aw8e)
+Пример запуска игры: [asciinema](https://asciinema.org/a/X5r1KQThf1rMzYH7gJIF1Aw8e)
+
+### GCD
+Пример запуска игры: [asciinema](https://asciinema.org/a/8hZRgjH4BKEggF3r3zmSgsZxe)
