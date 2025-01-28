@@ -8,12 +8,16 @@ public class Progression {
     public static void play() {
         String name = Cli.greet();
         System.out.println("What number is missing in the progression?");
-        int length = 10;
-        for (int i = 0; i < 3; i++) {
+        final int length = 10;
+        final int countOfTry = 3;
+        final int rangeForNumber = 100;
+        final int rangeForDifference = 30;
+        final int countOfElements = 10;
+        for (int i = 0; i < countOfTry; i++) {
             Random random = new Random();
-            int number = random.nextInt(100);
-            int difference = random.nextInt(30);
-            int pointer = random.nextInt(10);
+            int number = random.nextInt(rangeForNumber);
+            int difference = random.nextInt(rangeForDifference);
+            int pointer = random.nextInt(countOfElements);
             System.out.print("Question:");
             String correctAnswer = getCorrectAnswer(number, difference, pointer, length);
             boolean check = Engine.checkTheCorrectness(correctAnswer, name, i);

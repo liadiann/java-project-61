@@ -8,9 +8,11 @@ public class Prime {
     public static void play() {
         String name = Cli.greet();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
+        final int countOfTry = 3;
+        final int range = 100;
+        for (int i = 0; i < countOfTry; i++) {
             Random random = new Random();
-            int number = random.nextInt(100);
+            int number = random.nextInt(range);
             System.out.println("Question: " + number);
             String correctAnswer = getCorrectAnswer(number);
             boolean check = Engine.checkTheCorrectness(correctAnswer, name, i);

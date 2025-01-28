@@ -8,9 +8,11 @@ public class Even {
     public static void play() {
         String name = Cli.greet();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
+        final int countOfTry = 3;
+        final int range = 100;
+        for (int i = 0; i < countOfTry; i++) {
             Random random = new Random();
-            int number = random.nextInt(100);
+            int number = random.nextInt(range);
             System.out.println("Question: " + number);
             String correctAnswer;
             if (number % 2 == 0) {

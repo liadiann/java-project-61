@@ -8,11 +8,14 @@ public class Calc {
     public static void play() {
         String name = Cli.greet();
         System.out.println("What is the result of the expression?");
-        for (int i = 0; i < 3; i++) {
+        final int countOfTry = 3;
+        final int range = 100;
+        final int countOfOperations = 3;
+        for (int i = 0; i < countOfTry; i++) {
             Random random = new Random();
-            int number1 = random.nextInt(100);
-            int number2 = random.nextInt(100);
-            int pointerToTheOperation = random.nextInt(3);
+            int number1 = random.nextInt(range);
+            int number2 = random.nextInt(range);
+            int pointerToTheOperation = random.nextInt(countOfOperations);
             String operation;
             if (pointerToTheOperation == 0) {
                 operation = "+";
