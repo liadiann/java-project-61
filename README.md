@@ -13,3 +13,6 @@
 
 ### Progression
 Пример запуска игры: [asciinema](https://asciinema.org/a/T9qSqE1QA8R7NbnXRBw5ZKMVs)
+
+### Prime
+Пример запуска игры: [asciinema](https://asciinema.org/a/muccwg2qJhPm51zRU9AkUXJZP)
