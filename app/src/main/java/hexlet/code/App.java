@@ -30,16 +30,21 @@ class App {
                 break;
             case "3":
                 Calc.play();
+                break;
             case "4":
                 GCD.play();
+                break;
             case "5":
                 Progression.play();
+                break;
             case "6":
                 Prime.play();
+                break;
             case "0":
                 break;
             default:
                 System.out.println("Incorrect input");
+                break;
         }
         sc.close();
     }
