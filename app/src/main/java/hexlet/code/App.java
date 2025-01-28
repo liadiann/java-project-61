@@ -46,6 +46,5 @@ class App {
                 System.out.println("Incorrect input");
                 break;
         }
-        sc.close();
     }
 }
