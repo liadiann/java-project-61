@@ -10,3 +10,6 @@
 
 ### GCD
 Пример запуска игры: [asciinema](https://asciinema.org/a/8hZRgjH4BKEggF3r3zmSgsZxe)
+
+### Progression
+Пример запуска игры: [asciinema](https://asciinema.org/a/T9qSqE1QA8R7NbnXRBw5ZKMVs)
