@@ -4,20 +4,22 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static boolean checkTheCorrectness(String correctAnswer, String name, int countOfIteration) {
+    public static void checkTheCorrectness(String[][] data, String name) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Your answer: ");
-        String answer = sc.next();
-        if (answer.equals(correctAnswer)) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            System.out.println("Let's try again, " + name + "!");
-            return false;
+        for (int i = 0; i < Constant.COUNT; i++) {
+            System.out.println("Question: " + data[i][0]);
+            System.out.print("Your answer: ");
+            String answer = sc.next();
+            if (answer.equals(data[i][1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + data[i][1] + "'.");
+                System.out.println("Let's try again, " + name + "!");
+                break;
+            }
+            if (i == 2) {
+                System.out.println("Congratulations, " + name + "!");
+            }
         }
-        if (countOfIteration == 2) {
-            System.out.println("Congratulations, " + name + "!");
-        }
-        return true;
     }
 }

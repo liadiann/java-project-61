@@ -21,24 +21,28 @@ class App {
             0 - Exit""");
         System.out.print("Your choice: ");
         String choice = sc.next();
+        String name = "";
+        if (!choice.equals("1")) {
+            name = Cli.greet();
+        }
         switch (choice) {
             case "1":
                 Cli.greet();
                 break;
             case "2":
-                Even.play();
+                Even.play(name);
                 break;
             case "3":
-                Calc.play();
+                Calc.play(name);
                 break;
             case "4":
-                GCD.play();
+                GCD.play(name);
                 break;
             case "5":
-                Progression.play();
+                Progression.play(name);
                 break;
             case "6":
-                Prime.play();
+                Prime.play(name);
                 break;
             case "0":
                 break;

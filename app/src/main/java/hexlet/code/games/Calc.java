@@ -1,14 +1,12 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Constant;
 
 public class Calc {
-    public static void play() {
-        String name = Cli.greet();
-        System.out.println("What is the result of the expression?");
+    public static void play(String name) {
+        String[][] data = new String[Constant.COUNT][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
         for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
             int number1 = random.nextInt(Constant.RANGE_1);
@@ -22,13 +20,11 @@ public class Calc {
             } else {
                 operation = "*";
             }
-            System.out.println("Question: " + number1 + " " + operation + " " + number2);
-            String correctAnswer = getCorrectAnswer(operation, number1, number2);
-            boolean check = Engine.checkTheCorrectness(correctAnswer, name, i);
-            if (!check) {
-                break;
-            }
+            data[i][0] = number1 + " " + operation + " " + number2;
+            data[i][1] = getCorrectAnswer(operation, number1, number2);
         }
+        System.out.println("What is the result of the expression?");
+        Engine.checkTheCorrectness(data, name);
     }
 
     public static String getCorrectAnswer(String operation, int number1, int number2) {

@@ -1,40 +1,35 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import java.util.Random;
 import hexlet.code.Constant;
 
 public class Progression {
-    public static void play() {
-        String name = Cli.greet();
-        System.out.println("What number is missing in the progression?");
+    public static void play(String name) {
+        String[][] data = new String[Constant.COUNT][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
         for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
             int number = random.nextInt(Constant.RANGE_1);
             int difference = random.nextInt(Constant.RANGE_2);
             int pointer = random.nextInt(Constant.LENGTH_PROGRESSION);
-            System.out.print("Question:");
-            String correctAnswer = getCorrectAnswer(number, difference, pointer, Constant.LENGTH_PROGRESSION);
-            boolean check = Engine.checkTheCorrectness(correctAnswer, name, i);
-            if (!check) {
-                break;
-            }
+            getCorrectAnswer(number, difference, pointer, Constant.LENGTH_PROGRESSION, data, i);
         }
+        System.out.println("What number is missing in the progression?");
+        Engine.checkTheCorrectness(data, name);
     }
 
-    public static String getCorrectAnswer(int firstNumber, int difference, int pointer, int length) {
-        String correctAnswer = "";
+    public static void getCorrectAnswer(int firstNumber, int diff, int pointer, int length, String[][] data, int ind) {
+        var result = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            int number = firstNumber + i * difference;
+            int number = firstNumber + i * diff;
             if (i == pointer) {
-                correctAnswer = String.valueOf(number);
-                System.out.print(" ..");
+                data[ind][1] = String.valueOf(number);
+                result.append(".. ");
                 continue;
             }
-            System.out.print(" " + number);
+            String tmp = number + " ";
+            result.append(tmp);
         }
-        System.out.print("\n");
-        return correctAnswer;
+        data[ind][0] = result.toString();
     }
 }
