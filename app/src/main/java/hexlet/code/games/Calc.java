@@ -3,19 +3,17 @@ package hexlet.code.games;
 import java.util.Random;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.Constant;
 
 public class Calc {
     public static void play() {
         String name = Cli.greet();
         System.out.println("What is the result of the expression?");
-        final int countOfTry = 3;
-        final int range = 100;
-        final int countOfOperations = 3;
-        for (int i = 0; i < countOfTry; i++) {
+        for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
-            int number1 = random.nextInt(range);
-            int number2 = random.nextInt(range);
-            int pointerToTheOperation = random.nextInt(countOfOperations);
+            int number1 = random.nextInt(Constant.RANGE_1);
+            int number2 = random.nextInt(Constant.RANGE_1);
+            int pointerToTheOperation = random.nextInt(Constant.COUNT);
             String operation;
             if (pointerToTheOperation == 0) {
                 operation = "+";

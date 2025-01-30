@@ -3,23 +3,19 @@ package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
 import java.util.Random;
+import hexlet.code.Constant;
 
 public class Progression {
     public static void play() {
         String name = Cli.greet();
         System.out.println("What number is missing in the progression?");
-        final int length = 10;
-        final int countOfTry = 3;
-        final int rangeForNumber = 100;
-        final int rangeForDifference = 30;
-        final int countOfElements = 10;
-        for (int i = 0; i < countOfTry; i++) {
+        for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
-            int number = random.nextInt(rangeForNumber);
-            int difference = random.nextInt(rangeForDifference);
-            int pointer = random.nextInt(countOfElements);
+            int number = random.nextInt(Constant.RANGE_1);
+            int difference = random.nextInt(Constant.RANGE_2);
+            int pointer = random.nextInt(Constant.LENGTH_PROGRESSION);
             System.out.print("Question:");
-            String correctAnswer = getCorrectAnswer(number, difference, pointer, length);
+            String correctAnswer = getCorrectAnswer(number, difference, pointer, Constant.LENGTH_PROGRESSION);
             boolean check = Engine.checkTheCorrectness(correctAnswer, name, i);
             if (!check) {
                 break;

@@ -3,16 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
 import java.util.Random;
+import hexlet.code.Constant;
 
 public class Prime {
     public static void play() {
         String name = Cli.greet();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        final int countOfTry = 3;
-        final int range = 100;
-        for (int i = 0; i < countOfTry; i++) {
+        for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
-            int number = random.nextInt(range);
+            int number = random.nextInt(Constant.RANGE_1);
             System.out.println("Question: " + number);
             String correctAnswer = getCorrectAnswer(number);
             boolean check = Engine.checkTheCorrectness(correctAnswer, name, i);
