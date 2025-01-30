@@ -10,7 +10,7 @@ public class Even {
         for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
             int number = random.nextInt(Constant.RANGE_1);
-            data[i][0] = String.valueOf(number);
+            data[i][0] = " " + number;
             if (number % 2 == 0) {
                 data[i][1] = "yes";
             } else {

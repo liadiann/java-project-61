@@ -7,7 +7,7 @@ public class Engine {
     public static void checkTheCorrectness(String[][] data, String name) {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < Constant.COUNT; i++) {
-            System.out.println("Question: " + data[i][0]);
+            System.out.println("Question:" + data[i][0]);
             System.out.print("Your answer: ");
             String answer = sc.next();
             if (answer.equals(data[i][1])) {

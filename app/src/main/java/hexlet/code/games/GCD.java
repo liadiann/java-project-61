@@ -11,7 +11,7 @@ public class GCD {
             Random random = new Random();
             int number1 = random.nextInt(Constant.RANGE_1);
             int number2 = random.nextInt(Constant.RANGE_2);
-            data[i][0] = number1 + " " + number2;
+            data[i][0] = " " + number1 + " " + number2;
             data[i][1] = getCorrectAnswer(number1, number2);
         }
         System.out.println("Find the greatest common divisor of given numbers.");

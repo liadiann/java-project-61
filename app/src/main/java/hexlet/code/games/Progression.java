@@ -24,10 +24,10 @@ public class Progression {
             int number = firstNumber + i * diff;
             if (i == pointer) {
                 data[ind][1] = String.valueOf(number);
-                result.append(".. ");
+                result.append(" ..");
                 continue;
             }
-            String tmp = number + " ";
+            String tmp = " " + number;
             result.append(tmp);
         }
         data[ind][0] = result.toString();

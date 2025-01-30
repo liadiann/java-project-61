@@ -20,7 +20,7 @@ public class Calc {
             } else {
                 operation = "*";
             }
-            data[i][0] = number1 + " " + operation + " " + number2;
+            data[i][0] = " " + number1 + " " + operation + " " + number2;
             data[i][1] = getCorrectAnswer(operation, number1, number2);
         }
         System.out.println("What is the result of the expression?");
