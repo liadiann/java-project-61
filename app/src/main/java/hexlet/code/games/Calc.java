@@ -7,12 +7,12 @@ import hexlet.code.Constant;
 public class Calc {
     public static void play() {
         final String description = "What is the result of the expression?";
-        String[][] data = new String[Constant.COUNT][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
-        for (int i = 0; i < Constant.COUNT; i++) {
+        String[][] data = new String[Engine.COUNT_OF_ROUNDS][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
             Random random = new Random();
             int number1 = random.nextInt(Constant.RANGE_1);
             int number2 = random.nextInt(Constant.RANGE_1);
-            int pointerToTheOperation = random.nextInt(Constant.COUNT);
+            int pointerToTheOperation = random.nextInt(Engine.COUNT_OF_ROUNDS);
             String operation;
             if (pointerToTheOperation == 0) {
                 operation = "+";

@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 public class Engine {
 
+    public static final int COUNT_OF_ROUNDS = 3;
+
     public static void checkTheCorrectness(String[][] data, String description) {
         String name = Cli.greet();
         System.out.println(description);
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < Constant.COUNT; i++) {
+        for (int i = 0; i < COUNT_OF_ROUNDS; i++) {
             System.out.println("Question:" + data[i][0]);
             System.out.print("Your answer: ");
             String answer = sc.next();
