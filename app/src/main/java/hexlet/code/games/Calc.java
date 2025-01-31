@@ -7,22 +7,16 @@ import hexlet.code.Constant;
 public class Calc {
     public static void play() {
         final String description = "What is the result of the expression?";
+        final int countOfOperations = 3;
         String[][] data = new String[Engine.COUNT_OF_ROUNDS][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
             Random random = new Random();
             int number1 = random.nextInt(Constant.RANGE_1);
             int number2 = random.nextInt(Constant.RANGE_1);
-            int pointerToTheOperation = random.nextInt(Engine.COUNT_OF_ROUNDS);
-            String operation;
-            if (pointerToTheOperation == 0) {
-                operation = "+";
-            } else if (pointerToTheOperation == 1) {
-                operation = "-";
-            } else {
-                operation = "*";
-            }
-            data[i][0] = " " + number1 + " " + operation + " " + number2;
-            data[i][1] = getCorrectAnswer(operation, number1, number2);
+            String[] operation = {"+", "-", "*"};
+            int indexToTheOperation = random.nextInt(countOfOperations);
+            data[i][0] = " " + number1 + " " + operation[indexToTheOperation] + " " + number2;
+            data[i][1] = getCorrectAnswer(operation[indexToTheOperation], number1, number2);
         }
         Engine.checkTheCorrectness(data, description);
     }
