@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void checkTheCorrectness(String[][] data, String name) {
+    public static void checkTheCorrectness(String[][] data, String description) {
+        String name = Cli.greet();
+        System.out.println(description);
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < Constant.COUNT; i++) {
             System.out.println("Question:" + data[i][0]);

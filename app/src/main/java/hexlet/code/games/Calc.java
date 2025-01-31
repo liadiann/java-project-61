@@ -5,7 +5,8 @@ import hexlet.code.Engine;
 import hexlet.code.Constant;
 
 public class Calc {
-    public static void play(String name) {
+    public static void play() {
+        final String description = "What is the result of the expression?";
         String[][] data = new String[Constant.COUNT][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
         for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
@@ -23,8 +24,7 @@ public class Calc {
             data[i][0] = " " + number1 + " " + operation + " " + number2;
             data[i][1] = getCorrectAnswer(operation, number1, number2);
         }
-        System.out.println("What is the result of the expression?");
-        Engine.checkTheCorrectness(data, name);
+        Engine.checkTheCorrectness(data, description);
     }
 
     public static String getCorrectAnswer(String operation, int number1, int number2) {

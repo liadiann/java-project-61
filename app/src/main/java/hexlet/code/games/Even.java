@@ -5,7 +5,8 @@ import hexlet.code.Engine;
 import hexlet.code.Constant;
 
 public class Even {
-    public static void play(String name) {
+    public static void play() {
+        final String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] data = new String[Constant.COUNT][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
         for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
@@ -17,7 +18,6 @@ public class Even {
                 data[i][1] = "no";
             }
         }
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Engine.checkTheCorrectness(data, name);
+        Engine.checkTheCorrectness(data, description);
     }
 }

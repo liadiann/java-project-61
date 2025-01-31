@@ -5,7 +5,8 @@ import java.util.Random;
 import hexlet.code.Constant;
 
 public class GCD {
-    public static void play(String name) {
+    public static void play() {
+        final String description = "Find the greatest common divisor of given numbers.";
         String[][] data = new String[Constant.COUNT][Constant.COUNT_OF_ELEMENTS_IN_PAIR];
         for (int i = 0; i < Constant.COUNT; i++) {
             Random random = new Random();
@@ -14,8 +15,7 @@ public class GCD {
             data[i][0] = " " + number1 + " " + number2;
             data[i][1] = getCorrectAnswer(number1, number2);
         }
-        System.out.println("Find the greatest common divisor of given numbers.");
-        Engine.checkTheCorrectness(data, name);
+        Engine.checkTheCorrectness(data, description);
     }
 
     public static String getCorrectAnswer(int number1, int number2) {
